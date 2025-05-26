@@ -83,7 +83,12 @@
                     </li>
                 </ul>
             </div>
-
+            <div class="mt-8 border-t pt-4">
+                <a href="<?=BASE_URL ?>?role=admin&act=login" class="flex items-center px-3 py-3 text-red-500 hover:text-red-600">
+                    <i class="icofont-logout me-2 text-red-500"></i>
+                    <span>Sign Out</span>
+                </a>
+            </div>
         </ul>
     </div>
 </div>

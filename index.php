@@ -1,5 +1,6 @@
 <?php
-include_once 'app/database/database.php';
-include_once 'app/models/admin/Homemodel.php';
-include_once 'app/controllers/admin/Homecontroller.php';
-include_once 'router/web.php';
+include 'app/database/database.php';
+include 'app/models/admin/Homemodel.php';
+include 'app/controllers/admin/Homecontroller.php';
+const BASE_URL = "http://localhost/project1_2025/";
+include 'router/web.php';
