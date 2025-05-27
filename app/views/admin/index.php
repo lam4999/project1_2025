@@ -73,7 +73,7 @@
             <br>
             <br>
             <br>
-            <h1 class="text-2xl font-bold ml-5">Dashboard</h1>
+            <h1 class="text-2xl font-bold ml-5 text-slate-800 dark:text-white">Dashboard</h1>
             <div class="active  p-4 bg-gray-50 rounded-lg dark:bg-gray-800/40 ml-5" id="all" role="tabpanel" aria-labelledby="all-tab">
                 <div class="grid grid-cols-1 p-0 md:p-4">
                     <div class="sm:-mx-6 lg:-mx-8">
