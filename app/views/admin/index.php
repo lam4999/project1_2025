@@ -159,6 +159,14 @@
         document.getElementById('toggle-menu-hide').addEventListener('click', function() {
             document.body.classList.toggle('sidebar-closed');
         });
+        document.querySelectorAll('[data-fc-type="collapse"]').forEach(function(toggle) {
+            toggle.addEventListener('click', function() {
+                var next = toggle.nextElementSibling;
+                if (next && next.classList.contains('overflow-hidden')) {
+                    next.classList.toggle('hidden');
+                }
+            });
+        });
     </script>
     <!-- JAVASCRIPTS -->
 </body>
