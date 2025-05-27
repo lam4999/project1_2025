@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'app/database/database.php';
 include 'app/models/admin/Homemodel.php';
 include 'app/controllers/admin/Homecontroller.php';
