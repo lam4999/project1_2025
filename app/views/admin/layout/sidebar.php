@@ -3,10 +3,14 @@
         <ul class="navbar-nav" id="parent-accordion" data-fc-type="accordion">
 
             <!-- Dashboard -->
+
             <li class="nav-item relative block
             <?php if (isset($_GET['act']) && $_GET['act'] == 'home') echo 'active'; ?>
             
            " >
+
+            <li class="nav-item relative block">
+
                 <a href="<?=BASE_URL ?>?role=admin&act=home" data-fc-type="collapse" data-fc-parent="parent-accordion"
                     class="nav-link hover:bg-transparent hover:text-black rounded-md dark:hover:text-slate-200 flex items-center decoration-0 px-3 py-3 group-data-[sidebar=dark]:hover:text-slate-200 group-data-[sidebar=brand]:hover:text-slate-200">
                     <span data-lucide="home" class="w-5 h-5 text-center text-slate-800 dark:text-slate-400 me-2"></span>

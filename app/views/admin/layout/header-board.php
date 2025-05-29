@@ -59,6 +59,7 @@
                         class="h-8 w-8 rounded-full"
                         src="assets/admin/images/users/avatar-1.png"
                         alt="user photo" />
+
                       <?php  if (!empty($dataUsers) && is_array($dataUsers)): ?>
   <?php foreach ($dataUsers as $key => $value): ?>
     <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
@@ -74,6 +75,14 @@
 <?php endif; ?>
 
                       <?php ?>
+
+                      <?php foreach ($dataUsers as $key => $value):  ?>
+                        <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
+                          <span class="block font-medium text-slate-600 dark:text-gray-300"><?= $value->ten ?></span>
+                          <span class="-mt-0.5 block text-xs text-slate-500 dark:text-gray-400">Admin</span>
+                        </span>
+                      <?php endforeach; ?>
+
                     </button>
 
                     <div

@@ -6,7 +6,7 @@
           var year = new Date();
           document.write(year.getFullYear());
         </script>
-        Robotech
+        Lâm professional 💫
         <span class="float-right hidden md:inline-block">Crafted with ❤️ by Mannatthemes</span>
       </footer>
     </div>
