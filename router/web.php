@@ -15,17 +15,42 @@ if ($role == 'user') {
             // http://localhost/project1_2025/?role=admin&act=login
         case 'login': {
                 include_once 'app/controllers/admin/Homecontroller.php';
-                $homecontroller = new Homecontroller();
+                $homecontroller = new LoginController();
                 $homecontroller->login();
                 break;
             }
             // http://localhost/project1_2025/?role=admin&act=post-login
         case 'post-login': {
                 include_once 'app/controllers/admin/Homecontroller.php';
-                $homecontroller = new Homecontroller();
+                $homecontroller = new LoginController();
                 $homecontroller->postlogin();
                 break;
             }
+            case 'logout': {
+                include_once 'app/controllers/admin/Homecontroller.php';
+                $homecontroller = new LoginController();
+                $homecontroller->logout();
+                break;
+            }
+          case 'all-user': {
+    include_once 'app/controllers/admin/UserController.php';
+    $userController = new UserController();
+    $userController->getAllUser();
+    break;
+}
+case 'add-user': {
+    include_once 'app/controllers/admin/UserController.php';
+    $userController = new UserController();
+    $userController->addUser();
+    break;
+}
+case 'post-add-user': {
+    include_once 'app/controllers/admin/UserController.php';
+    $userController = new UserController();
+    $userController->addPostUser();
+    break;
+}
+
         default: 
             $homecontroller = new Homecontroller();
             $homecontroller->dashboard();

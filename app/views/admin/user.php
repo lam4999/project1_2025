@@ -73,15 +73,22 @@
             <br>
             <br>
             <br>
-            <h1 class="text-2xl font-bold ml-5 text-slate-800 dark:text-white">Dashboard</h1>
-
-            <!--end grid-->
-=======
+            <h1 class="text-2xl font-bold ml-5 text-slate-800 dark:text-white">Danh sách người dùng</h1>
             <div class="active  p-4 bg-gray-50 rounded-lg dark:bg-gray-800/40 ml-5" id="all" role="tabpanel" aria-labelledby="all-tab">
                 <div class="grid grid-cols-1 p-0 md:p-4">
                     <div class="sm:-mx-6 lg:-mx-8">
+                        
                         <div class="relative overflow-x-auto block w-full sm:px-6 lg:px-8">
+                           <div class="mb-4">
+   <a href="<?= BASE_URL ?>?role=admin&act=add-user"
+      class="inline-flex items-center px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded">
+      <i class="icofont-plus mr-2"></i> Add new
+   </a>
+</div>
+
                             <table class="w-full">
+                                
+
                                 <thead class="bg-gray-50 dark:bg-gray-700/20">
                                     <tr>
                                         <th scope="col" class="p-3">
@@ -99,6 +106,9 @@
                                             Email
                                         </th>
                                         <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                            Image
+                                        </th>
+                                        <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                             Address
                                         </th>
                                         <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
@@ -108,7 +118,7 @@
                                 </thead>
                                 <tbody>
                                     <!-- 1 -->
-                                    <?php foreach ($dataUsers as $key => $value):  ?>
+                                    <?php foreach ($listUser as $key => $value):  ?>
                                         <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                             <td class="w-4 p-4">
                                             </td>
@@ -130,6 +140,10 @@
                                                 <?= $value->email ?>
                                             </td>
                                             <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                               <img src="<?= $value->anh ?>" alt="" width="50px">
+
+                                            </td>
+                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                                 <?= $value->diachi ?>
                                             </td>
                                             <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
@@ -141,8 +155,8 @@
                             </table>
                         </div><!--end div-->
                     </div><!--end div-->
-                </div><!--end grid-->
-
+                </div>
+                <!--end grid-->
             </div>
         </div>
     </div>

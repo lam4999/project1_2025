@@ -11,14 +11,23 @@ class Homemodel{
         $result = $query->fetchAll();
         return $result;
     }
-    public function checkLogin(){
-        $email = $_POST['email'];
-        $matkhau = $_POST['matkhau'];
-        $sql = "SELECT * FROM `user` where `email` = '$email' and `matkhau` = '$matkhau'";
-        $query = $this->db->pdo->query($sql);
-        $result = $query->fetch();
+   function checkLogin(){
+    $email = $_POST['email'];
+    $matkhau = $_POST['matkhau'];
+
+    $sql = "SELECT * FROM `user` WHERE email = :email and role = 1";
+    $stmt = $this->db->pdo->prepare($sql);
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    $result = $stmt->fetch();
+
+    if ($result && password_verify($matkhau, $result->matkhau)) {
         return $result;
     }
+
+    return false;
+}
         
 }
 
