@@ -9,3 +9,4 @@ class Homecontroller extends ControllerAdmin {
         
         include_once './app/views/admin/index.php'; // View sử dụng biến này
     }
+}
