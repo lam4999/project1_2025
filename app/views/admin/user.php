@@ -3,31 +3,31 @@
 
 <!-- Mirrored from mannatthemes.com/robotech/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 23 May 2025 12:34:18 GMT -->
 <style>
-    .main-sidebar {
-        width: 250px;
-        position: fixed;
-        left: 0;
-        top: 0;
-        z-index: 99;
-        transition: left 0.3s;
-    }
+.main-sidebar {
+    width: 250px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    transition: left 0.3s;
+}
 
-    .main-header,
-    .main-content,
-    .main-footer {
-        margin-left: 250px;
-        transition: margin-left 0.3s;
-    }
+.main-header,
+.main-content,
+.main-footer {
+    margin-left: 250px;
+    transition: margin-left 0.3s;
+}
 
-    body.sidebar-closed .main-sidebar {
-        left: -250px;
-    }
+body.sidebar-closed .main-sidebar {
+    left: -250px;
+}
 
-    body.sidebar-closed .main-header,
-    body.sidebar-closed .main-content,
-    body.sidebar-closed .main-footer {
-        margin-left: 0;
-    }
+body.sidebar-closed .main-header,
+body.sidebar-closed .main-content,
+body.sidebar-closed .main-footer {
+    margin-left: 0;
+}
 </style>
 
 <head>
@@ -48,11 +48,13 @@
 
 </head>
 
-<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="min-h-screen flex flex-col bg-[#EEF0FC] dark:bg-gray-900">
+<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical"
+    class="min-h-screen flex flex-col bg-[#EEF0FC] dark:bg-gray-900">
 
     <!-- leftbar-tab-menu -->
 
-    <div class="min-h-full z-[99] fixed inset-y-0 print:hidden bg-gradient-to-t from-[#6f3dc3] from-10% via-[#603dc3] via-40% to-[#5c3dc3] to-100% dark:bg-[#603dc3] main-sidebar duration-300 group-data-[sidebar=dark]:bg-[#603dc3] group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#603dc3]">
+    <div
+        class="min-h-full z-[99] fixed inset-y-0 print:hidden bg-gradient-to-t from-[#6f3dc3] from-10% via-[#603dc3] via-40% to-[#5c3dc3] to-100% dark:bg-[#603dc3] main-sidebar duration-300 group-data-[sidebar=dark]:bg-[#603dc3] group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#603dc3]">
         <!-- Logo -->
         <?php include_once './app/views/admin/layout/logo.php'; ?>
         <!-- Sidebar -->
@@ -74,44 +76,52 @@
             <br>
             <br>
             <h1 class="text-2xl font-bold ml-5 text-slate-800 dark:text-white">Danh sách người dùng</h1>
-            <div class="active  p-4 bg-gray-50 rounded-lg dark:bg-gray-800/40 ml-5" id="all" role="tabpanel" aria-labelledby="all-tab">
+            <div class="active  p-4 bg-gray-50 rounded-lg dark:bg-gray-800/40 ml-5" id="all" role="tabpanel"
+                aria-labelledby="all-tab">
                 <div class="grid grid-cols-1 p-0 md:p-4">
                     <div class="sm:-mx-6 lg:-mx-8">
-                        
+
                         <div class="relative overflow-x-auto block w-full sm:px-6 lg:px-8">
-                           <div class="mb-4">
-   <a href="<?= BASE_URL ?>?role=admin&act=add-user"
-      class="inline-flex items-center px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded">
-      <i class="icofont-plus mr-2"></i> Add new
-   </a>
-</div>
+                            <div class="mb-4">
+                                <a href="<?= BASE_URL ?>?role=admin&act=add-user"
+                                    class="inline-flex items-center px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded">
+                                    <i class="icofont-plus mr-2"></i> Add new
+                                </a>
+                            </div>
 
                             <table class="w-full">
-                                
+
 
                                 <thead class="bg-gray-50 dark:bg-gray-700/20">
                                     <tr>
                                         <th scope="col" class="p-3">
                                         </th>
-                                        <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                        <th scope="col"
+                                            class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                             ID
                                         </th>
-                                        <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                        <th scope="col"
+                                            class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                             Name
                                         </th>
-                                        <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                        <th scope="col"
+                                            class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                             Phone
                                         </th>
-                                        <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                        <th scope="col"
+                                            class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                             Email
                                         </th>
-                                        <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                        <th scope="col"
+                                            class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                             Image
                                         </th>
-                                        <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                        <th scope="col"
+                                            class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                             Address
                                         </th>
-                                        <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                        <th scope="col"
+                                            class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                             Action
                                         </th>
                                     </tr>
@@ -119,42 +129,68 @@
                                 <tbody>
                                     <!-- 1 -->
                                     <?php foreach ($listUser as $key => $value):  ?>
-                                        <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                            <td class="w-4 p-4">
-                                            </td>
-                                            <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                <div class="flex items-center">
-                                                    <div class="self-center">
-                                                        <h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400"></h5>
-                                                        <span class="block font-medium text-slate-500"><?= $key + 1 ?></span>
-                                                    </div>
+                                    <tr
+                                        class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
+                                        <td class="w-4 p-4">
+                                        </td>
+                                        <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
+                                            <div class="flex items-center">
+                                                <div class="self-center">
+                                                    <h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">
+                                                    </h5>
+                                                    <span
+                                                        class="block font-medium text-slate-500"><?= $key + 1 ?></span>
                                                 </div>
-                                            </td>
-                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                <?= $value->ten ?>
-                                            </td>
-                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                <?= $value->sdt ?>
-                                            </td>
-                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                <?= $value->email ?>
-                                            </td>
-                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                               <img src="<?= $value->anh ?>" alt="" width="50px">
+                                            </div>
+                                        </td>
+                                        <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                            <?= $value->ten ?>
+                                        </td>
+                                        <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                            <?= $value->sdt ?>
+                                        </td>
+                                        <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                            <?= $value->email ?>
+                                        </td>
+                                        <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                            <img src="<?= $value->anh ?>" alt="" width="50px">
 
-                                            </td>
-                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                <?= $value->diachi ?>
-                                            </td>
-                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                <a href="#"><i class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>
-                                            </td>
-                                        </tr>
+                                        </td>
+                                        <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                            <?= $value->diachi ?>
+                                        </td>
+                                        <td
+                                            class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 flex space-x-2">
+                                            <!-- Xem chi tiết -->
+                                            <a href="<?= BASE_URL ?>?role=admin&act=view-user&id=<?= $value->id ?>"
+                                                title="Xem chi tiết">
+                                                <i
+                                                    class="icofont-eye text-lg text-green-500 dark:text-green-400 hover:underline"></i>
+                                            </a>
+
+                                            <!-- Sửa -->
+                                            <a href="<?= BASE_URL ?>?role=admin&act=update-user&id=<?= $value->id ?>"
+                                                title="Edit">
+                                                <i
+                                                    class="icofont-ui-edit text-lg text-blue-500 dark:text-blue-400 hover:underline"></i>
+                                            </a>
+                                            <!-- Xóa -->
+                                            <a href="<?= BASE_URL ?>?role=admin&act=delete-user&id=<?= $value->id ?>"
+                                                title="Delete"
+                                                onclick="return confirm('Bạn có chắc chắn muốn xóa người dùng này không?');">
+                                                <i
+                                                    class="icofont-ui-delete text-lg text-red-500 dark:text-red-400 hover:underline"></i>
+                                            </a>
+                                        </td>
+
+                                    </tr>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
-                        </div><!--end div-->
-                    </div><!--end div-->
+                        </div>
+                        <!--end div-->
+                    </div>
+                    <!--end div-->
                 </div>
                 <!--end grid-->
             </div>
@@ -174,17 +210,17 @@
     <script src="assets/admin/libs/flatpickr/flatpickr.min.js"></script>
     <script src="assets/admin/js/app.js"></script>
     <script>
-        document.getElementById('toggle-menu-hide').addEventListener('click', function() {
-            document.body.classList.toggle('sidebar-closed');
+    document.getElementById('toggle-menu-hide').addEventListener('click', function() {
+        document.body.classList.toggle('sidebar-closed');
+    });
+    document.querySelectorAll('[data-fc-type="collapse"]').forEach(function(toggle) {
+        toggle.addEventListener('click', function() {
+            var next = toggle.nextElementSibling;
+            if (next && next.classList.contains('overflow-hidden')) {
+                next.classList.toggle('hidden');
+            }
         });
-        document.querySelectorAll('[data-fc-type="collapse"]').forEach(function(toggle) {
-            toggle.addEventListener('click', function() {
-                var next = toggle.nextElementSibling;
-                if (next && next.classList.contains('overflow-hidden')) {
-                    next.classList.toggle('hidden');
-                }
-            });
-        });
+    });
     </script>
     <!-- JAVASCRIPTS -->
 </body>

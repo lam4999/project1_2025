@@ -5,7 +5,7 @@ class Database
     public function __construct()
     {
         $host = 'localhost';
-        $db_name = 'project1_2025';
+        $db_name = 'project3_2025';
         $user = 'root';
         $password = '';
         $port = '3306';

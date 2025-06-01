@@ -15,21 +15,21 @@ if ($role == 'user') {
             // http://localhost/project1_2025/?role=admin&act=login
         case 'login': {
                 include_once 'app/controllers/admin/Homecontroller.php';
-                $homecontroller = new LoginController();
-                $homecontroller->login();
+                $logincontroller = new LoginController();
+                $logincontroller->login();
                 break;
             }
             // http://localhost/project1_2025/?role=admin&act=post-login
         case 'post-login': {
                 include_once 'app/controllers/admin/Homecontroller.php';
-                $homecontroller = new LoginController();
-                $homecontroller->postlogin();
+                $logincontroller = new LoginController();
+                $logincontroller->postlogin();
                 break;
             }
-            case 'logout': {
+         case 'logout': {
                 include_once 'app/controllers/admin/Homecontroller.php';
-                $homecontroller = new LoginController();
-                $homecontroller->logout();
+                $logincontroller = new LoginController();
+                $logincontroller->logout();
                 break;
             }
           case 'all-user': {
@@ -44,10 +44,34 @@ case 'add-user': {
     $userController->addUser();
     break;
 }
+case 'update-user': {
+    include_once 'app/controllers/admin/UserController.php';
+    $userController = new UserController();
+    $userController->updateUser();
+    break;
+}
+case 'update-post-user': {
+    include_once 'app/controllers/admin/UserController.php';
+    $userController = new UserController();
+    $userController->updatePostUser();
+    break;
+}
 case 'post-add-user': {
     include_once 'app/controllers/admin/UserController.php';
     $userController = new UserController();
     $userController->addPostUser();
+    break;
+}
+case 'delete-user': {
+    include_once 'app/controllers/admin/UserController.php';
+    $userController = new UserController();
+    $userController->deleteUser();
+    break;
+}
+case 'view-user': {
+    include_once 'app/controllers/admin/UserController.php';
+    $userController = new UserController();
+    $userController->viewUser();
     break;
 }
 
