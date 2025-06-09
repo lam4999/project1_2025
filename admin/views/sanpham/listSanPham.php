@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Quan lý tài khoản quản trị</h1>
+                    <h1>Quản lý sản phẩm</h1>
                 </div>
 
             </div>
@@ -20,8 +20,8 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="<?= BASE_URL_ADMIN . '?act=form-them-quan-tri' ?>">
-                                <button class="btn btn-success">Thêm tài khoản </button>
+                            <a href="<?= BASE_URL_ADMIN . '?act=form-them-san-pham' ?>">
+                                <button class="btn btn-success">Thêm sản phẩm mới</button>
                             </a>
                         </div>
                         <div class="card-body">
@@ -29,27 +29,31 @@
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Tên</th>
-                                        <th>Email</th>
-                                        <th>Số điện thoại</th>
-                                        <th>mật khẩu</th>
-                                        <th>Trạng thái</th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Ảnh sản phẩm</th>
+                                        <th>Giá</th>
+                                        <th>Số lượng</th>
+                                        <th>Danh mục</th>
+                                        <th>Ngày cập nhật</th>
                                         <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($listQuanTri as $key => $quanTri): ?>
+                                    <?php foreach ($listSanPham as $key => $sanPham): ?>
                                         <tr>
                                             <td><?= $key + 1 ?></td>
-                                            <td><?= $quanTri['ten'] ?></td>
-                                            <td><?= $quanTri['email'] ?></td>
-                                            <td><?= $quanTri['dien_thoai'] ?></td>
-                                            <td><?= $quanTri['mat_khau'] ?></td>
-                                            <td><?= $quanTri['vai_tro'] ?></td>
+                                            <td><?= $sanPham['ten'] ?></td>
+                                            <td>
+                                                <img src="<?= BASE_URL . $sanPham['hinhanh'] ?>" alt="" style="width: 100px; height: auto; ">
+                                            </td>
+                                            <td><?= $sanPham['gia_coso'] ?></td>
+                                            <td><?= $sanPham['cosan_stock'] ?></td>
+                                            <td><?= $sanPham['ten_danhmuc'] ?></td>
+                                            <td><?= $sanPham['ngay_capnhat'] ?></td>
 
                                             <td>
-                                                <a href="<?= BASE_URL_ADMIN . '?act=form-sua-quan-tri&id_quantri=' . $quanTri['id'] ?>"><button class="btn btn-warning">Sửa</button>
-                                                </a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=form-sua-san-pham&id_sanpham=' . $sanPham['id'] ?>"><button class="btn btn-warning">Sua</button></a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=xoa-san-pham&id_sanpham=' . $sanPham['id'] ?>" onclick="return confirm('Ban co muon xoa khong?')"><button class="btn btn-danger">Xoa</button></a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

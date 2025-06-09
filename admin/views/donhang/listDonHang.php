@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Quan lý tài khoản quản trị</h1>
+                    <h1>Quản lý đơn hàng</h1>
                 </div>
 
             </div>
@@ -20,36 +20,35 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="<?= BASE_URL_ADMIN . '?act=form-them-quan-tri' ?>">
-                                <button class="btn btn-success">Thêm tài khoản </button>
-                            </a>
                         </div>
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Tên</th>
-                                        <th>Email</th>
+                                        <th>ID khách hàng</th>
+                                        <th>Tên người nhận</th>
                                         <th>Số điện thoại</th>
-                                        <th>mật khẩu</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Tổng tiền</th>
                                         <th>Trạng thái</th>
                                         <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($listQuanTri as $key => $quanTri): ?>
+                                    <?php foreach ($listDonHang as $key => $donHang): ?>
                                         <tr>
                                             <td><?= $key + 1 ?></td>
-                                            <td><?= $quanTri['ten'] ?></td>
-                                            <td><?= $quanTri['email'] ?></td>
-                                            <td><?= $quanTri['dien_thoai'] ?></td>
-                                            <td><?= $quanTri['mat_khau'] ?></td>
-                                            <td><?= $quanTri['vai_tro'] ?></td>
+                                            <td><?= $donHang['id_KH'] ?></td>
+                                            <td><?= $donHang['ten'] ?></td>
+                                            <td><?= $donHang['dien_thoai'] ?></td>
+                                            <td><?= $donHang['dia_chi'] ?></td>
+                                            <td><?= $donHang['tong_gia'] ?></td>
+                                            <td><?= $donHang['trangthai'] ?></td>
 
                                             <td>
-                                                <a href="<?= BASE_URL_ADMIN . '?act=form-sua-quan-tri&id_quantri=' . $quanTri['id'] ?>"><button class="btn btn-warning">Sửa</button>
-                                                </a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=chi-tiet-don-hang&id_donhang=' . $donHang['id'] ?>"><button class="btn btn-primary">Chi tiết</button></a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=form-sua-don-hang&id_donhang=' . $donHang['id'] ?>"><button class="btn btn-warning">Sua</button></a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
