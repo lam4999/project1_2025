@@ -38,7 +38,7 @@
     </div>
 
     <div class="relative group">
-      <a href="#" class="text-white flex items-center space-x-2 hover:text-green-200">
+      <a href="?act=chi-tiet-tai-khoan-client" class="text-white flex items-center space-x-2 hover:text-green-200">
         <i class="fa-regular fa-user text-2xl"></i>
       </a>
       <div class="absolute left-0 w-48 bg-white text-gray-800 mt-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity ease-out duration-300 z-50">
