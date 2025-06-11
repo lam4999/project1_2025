@@ -79,7 +79,7 @@
           <a href="<?= BASE_URL . '?act=chi-tiet-sp&id_sanpham=' . $sanPham['id'] ?>">
 
             <div class="bg-white p-4 rounded-lg shadow-lg">
-              <img src="<?= BASE_URL . $sanPham['hinhanh'] ?>" alt="" class="w-full rounded-lg hover-img">
+              <img src="<?= BASE_URL . $sanPham['hinhanh'] ?>" alt="" class="w-full h-60 object-cover rounded-lg hover-img">
               <p class="text-center font-bold text-pink-600 py-4"><?= $sanPham['ten'] ?></p>
               <p class="text-pink-600 text-xl font-bold text-center">
                 <?= number_format($sanPham['gia_coso'], 0) ?>₫

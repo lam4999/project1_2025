@@ -45,22 +45,22 @@ class AdminSanPhamController
         $error['id_danhmuc'] = 'Tên sản phẩm không được để trống';
       }
       if (empty($gia_coso)) {
-        $error['gia_coso'] = 'Tên sản phẩm không được để trống';
+        $error['gia_coso'] = 'Giá sản phẩm không được để trống';
       }
       if (empty($cosan_stock)) {
-        $error['cosan_stock'] = 'Tên sản phẩm không được để trống';
+        $error['cosan_stock'] = 'Số lượng sản phẩm không được để trống' ;
       }
       if (empty($ma_hang)) {
-        $error['ma_hang'] = 'Tên sản phẩm không được để trống';
+        $error['ma_hang'] = 'Mã sản phẩm không được để trống';
       }
       if (empty($trang_thai)) {
-        $error['trang_thai'] = 'Tên sản phẩm không được để trống';
+        $error['trang_thai'] = 'Trạng thái sản phẩm không được để trống';
       }
       if (empty($hinhanh)) {
-        $error['hinhanh'] = 'Tên sản phẩm không được để trống';
+        $error['hinhanh'] = 'Hình ảnh sản phẩm không được để trống';
       }
       if (empty($ngay_capnhat)) {
-        $error['ngay_capnhat'] = 'Tên sản phẩm không được để trống';
+        $error['ngay_capnhat'] = 'Ngày tháng không được để trống';
       }
 
       if (empty($error)) {
