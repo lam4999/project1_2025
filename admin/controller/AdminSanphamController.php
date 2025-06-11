@@ -125,7 +125,6 @@ class AdminSanPhamController
       }
     }
   }
-  // ...existing code...
 
   public function deleteSanPham()
   {

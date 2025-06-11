@@ -56,10 +56,8 @@ class AdminDonHangController
       $trangthai = $_POST['trangthai'];
       $error = [];
 
-      // Lấy trạng thái hiện tại của đơn hàng từ DB
       $donHang = $this->modelDonHang->getDetailDonHang($id);
       if ($donHang && $donHang['trangthai'] === 'đã giao') {
-        // Không cho phép cập nhật nếu đã giao
         $_SESSION['error'] = 'Đơn hàng đã giao không thể chỉnh sửa!';
         header("Location: " . BASE_URL_ADMIN . '?act=form-sua-don-hang&id_donhang=' . $id);
         exit();
