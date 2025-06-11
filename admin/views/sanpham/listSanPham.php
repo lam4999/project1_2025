@@ -52,8 +52,8 @@
                                             <td><?= $sanPham['ngay_capnhat'] ?></td>
 
                                             <td>
-                                                <a href="<?= BASE_URL_ADMIN . '?act=form-sua-san-pham&id_sanpham=' . $sanPham['id'] ?>"><button class="btn btn-warning">Sua</button></a>
-                                                <a href="<?= BASE_URL_ADMIN . '?act=xoa-san-pham&id_sanpham=' . $sanPham['id'] ?>" onclick="return confirm('Ban co muon xoa khong?')"><button class="btn btn-danger">Xoa</button></a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=form-sua-san-pham&id_sanpham=' . $sanPham['id'] ?>"><button class="btn btn-warning">Sửa</button></a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=xoa-san-pham&id_sanpham=' . $sanPham['id'] ?>" onclick="return confirm('Ban co muon xoa khong?')"><button class="btn btn-danger">Xóa</button></a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

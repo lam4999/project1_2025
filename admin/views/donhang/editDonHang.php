@@ -76,12 +76,8 @@
                                             ?>
                                         </select>
                                     </div>
-
-
-
                                 </div>
                                 <!-- /.card-body -->
-
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary" <?= $isLocked ? 'disabled' : '' ?>>Submit</button>
                                 </div>

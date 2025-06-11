@@ -48,7 +48,7 @@
 
                                             <td>
                                                 <a href="<?= BASE_URL_ADMIN . '?act=chi-tiet-don-hang&id_donhang=' . $donHang['id'] ?>"><button class="btn btn-primary">Chi tiết</button></a>
-                                                <a href="<?= BASE_URL_ADMIN . '?act=form-sua-don-hang&id_donhang=' . $donHang['id'] ?>"><button class="btn btn-warning">Sua</button></a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=form-sua-don-hang&id_donhang=' . $donHang['id'] ?>"><button class="btn btn-warning">Sửa</button></a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
