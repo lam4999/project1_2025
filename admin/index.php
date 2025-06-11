@@ -51,10 +51,6 @@ match ($act) {
 
   //route Bình luận
   'binh-luan' => (new AdminBinhLuanController())->danhSachBinhLuan(),
-  'form-them-binh-luan' => (new AdminBinhLuanController())->formAddBinhLuan(),
-  'them-binh-luan' => (new AdminBinhLuanController())->postAddBinhLuan(),
-  'form-sua-binh-luan' => (new AdminBinhLuanController())->formEditBinhLuan(),
-  'sua-binh-luan' => (new AdminBinhLuanController())->postEditBinhLuan(),
   'xoa-binh-luan' => (new AdminBinhLuanController())->deleteBinhLuan(),
 
 
