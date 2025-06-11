@@ -25,7 +25,7 @@
               </div>
 
               <form action="<?= BASE_URL_ADMIN . '?act=sua-quan-tri' ?>" method="POST">
-              <input type="hidden" name="id" value="<?= $quanTri['id'] ?>">
+                <input type="hidden" name="id" value="<?= $quanTri['id'] ?>">
 
                 <div class="card-body">
                   <div class="form-group">
@@ -39,7 +39,7 @@
 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" name="email" value="<?= $quanTri['email'] ?>"  placeholder="Nhập email">
+                    <input type="email" class="form-control" name="email" value="<?= $quanTri['email'] ?>" placeholder="Nhập email">
                     <?php if (isset($error['email'])) { ?>
                       <p class="text-danger"><?= $error['email'] ?></p>
                     <?php } ?>
@@ -54,7 +54,7 @@
                   </div>
 
 
-                
+
 
 
 

@@ -77,9 +77,10 @@
                     </a>
                 <?php else: ?>
                     <a href="?act=home">
-                    <p class="text-red-500 text-center mt-4 bg-red-100 border border-red-400 rounded-md p-3">
-    Vui lòng về trang chủ chọn sản phẩm.
-</p>                    </a>
+                        <p class="text-red-500 text-center mt-4 bg-red-100 border border-red-400 rounded-md p-3">
+                            Vui lòng về trang chủ chọn sản phẩm.
+                        </p>
+                    </a>
                 <?php endif; ?>
 
             </div>

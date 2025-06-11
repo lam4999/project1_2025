@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class HomeController
 {
@@ -7,17 +7,15 @@ class HomeController
 
   public function __construct()
   {
-   $this->modelSanPham = new SanPham();
-   $this->modelDanhMuc = new DanhMuc();
+    $this->modelSanPham = new SanPham();
+    $this->modelDanhMuc = new DanhMuc();
   }
 
- public function home(){
-   $listSanPham = $this->modelSanPham->getAllSanPham();
-   $listDanhMuc = $this->modelDanhMuc->getAllDanhMuc();
+  public function home()
+  {
+    $listSanPham = $this->modelSanPham->getAllSanPham();
+    $listDanhMuc = $this->modelDanhMuc->getAllDanhMuc();
 
     require_once './views/home.php';
- }   
-
-
-
+  }
 }

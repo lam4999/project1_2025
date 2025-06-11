@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     body {
       font-family: 'Poppins', sans-serif;
     }
+
     h1 {
       font-family: 'Pacifico', cursive;
     }
@@ -18,10 +20,12 @@
       background-color: #f87171;
       color: white;
     }
+
     .hover-img:hover {
       transform: scale(1.05);
       transition: transform 0.3s ease-in-out;
     }
+
     .size-option:hover {
       background-color: #fef3c7;
       cursor: pointer;

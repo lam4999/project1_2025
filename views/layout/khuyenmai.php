@@ -3,17 +3,19 @@
 
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nhận Khuyến Mãi</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 overflow-x-hidden">
     <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10 mb-16">
         <h1 class="text-3xl font-bold text-pink-600 text-center">🎉 Nhận Khuyến Mãi Đặc Biệt! 🎉</h1>
         <p class="text-gray-700 text-center mt-2">Đăng ký ngay để nhận ưu đãi hấp dẫn từ cửa hàng.</p>
-        
+
         <form class="mt-6 space-y-4" onsubmit="handleSubmit(event)">
             <div>
                 <label class="block text-gray-700 font-semibold">Họ và tên</label>
@@ -31,12 +33,12 @@
                 Nhận Khuyến Mãi
             </button>
         </form>
-        
+
         <div class="mt-6 text-center text-gray-600">
             <p>📢 Đừng bỏ lỡ! Chương trình khuyến mãi chỉ diễn ra trong thời gian ngắn.</p>
         </div>
     </div>
-    
+
     <?php require_once 'footer.php' ?>
 
     <script>
@@ -47,4 +49,5 @@
         }
     </script>
 </body>
+
 </html>

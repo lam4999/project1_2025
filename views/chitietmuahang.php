@@ -3,12 +3,14 @@
 
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông Tin Đơn Hàng</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-pink-100 p-6 overflow-x-hidden">
     <div class="container mx-auto max-w-5xl bg-white p-6 rounded-lg shadow-lg mt-8 mb-8">
         <h2 class="text-2xl font-bold text-pink-500 text-center mb-6">Thông Tin Đơn Hàng</h2>
@@ -27,20 +29,20 @@
                     </thead>
                     <tbody>
                         <?php foreach ($chiTietDonHang as $item): ?>
-                        <tr class="text-center border-b">
-                            <td class="p-2">
-                                <img src="<?= $item['hinhanh'] ?>" alt="" class="w-16 h-16 object-cover mx-auto">
-                            </td>
-                            <td class="p-2"> <?= $item['ten'] ?> </td>
-                            <td class="p-2 text-red-500 font-bold"> <?= number_format($item['gia'], 0, ',', '.') . ' đ' ?> </td>
-                            <td class="p-2"> <?= $item['so_luong'] ?> </td>
-                            <td class="p-2 font-bold"> <?= number_format($item['tong_gia'], 0, ',', '.') . ' đ' ?> </td>
-                        </tr>
+                            <tr class="text-center border-b">
+                                <td class="p-2">
+                                    <img src="<?= $item['hinhanh'] ?>" alt="" class="w-16 h-16 object-cover mx-auto">
+                                </td>
+                                <td class="p-2"> <?= $item['ten'] ?> </td>
+                                <td class="p-2 text-red-500 font-bold"> <?= number_format($item['gia'], 0, ',', '.') . ' đ' ?> </td>
+                                <td class="p-2"> <?= $item['so_luong'] ?> </td>
+                                <td class="p-2 font-bold"> <?= number_format($item['tong_gia'], 0, ',', '.') . ' đ' ?> </td>
+                            </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
-            
+
             <!-- Bảng thông tin đơn hàng -->
             <div class="bg-white p-4 rounded-lg shadow-md">
                 <table class="w-full border border-gray-300">
@@ -96,5 +98,6 @@
 
     </div>
 </body>
+
 </html>
 <?php require_once 'layout/footer.php'; ?>

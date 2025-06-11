@@ -77,13 +77,13 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1">Vai trò</label>
                     <select class="form-control" name="vai_tro" id="exampleFormControlSeclect1">
-                       <option selected disabled>Chọn vai trò</option>
-                       <option value="1">Admin</option>
-                       <option value="2">Khách hàng</option>
-                   </select>
-                        <?php if(isset($error['vai_tro'])) { ?>
-                         <p class="text-danger"><?= $error['vai_tro'] ?></p>
-                      <?php } ?>
+                      <option selected disabled>Chọn vai trò</option>
+                      <option value="1">Admin</option>
+                      <option value="2">Khách hàng</option>
+                    </select>
+                    <?php if (isset($error['vai_tro'])) { ?>
+                      <p class="text-danger"><?= $error['vai_tro'] ?></p>
+                    <?php } ?>
                   </div>
 
                   <div class="form-group">

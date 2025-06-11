@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php 
+<?php
 
 // Require file Common
 require_once './commons/env.php'; // Khai báo biến môi trường
@@ -23,7 +23,7 @@ $act = $_GET['act'] ?? '/';
 // Để bảo bảo tính chất chỉ gọi 1 hàm Controller để xử lý request thì mình sử dụng match
 
 match ($act) {
-//route
+    //route
     '/' => (new HomeController())->home(),
     'home' => (new HomeController())->home(),
 
@@ -31,7 +31,7 @@ match ($act) {
     'form-khuyen-mai' => (new GioiThieuController())->formKhuyenMai(),
     'gioi-thieu' => (new GioiThieuController())->gioiThieu(),
     'lien-he' => (new GioiThieuController())->lienHe(),
-  
+
 
     //đăng nhập và đăng ký
     'form-dang-ki-client' => (new dangNhapClientController())->formdangki(),
@@ -50,19 +50,18 @@ match ($act) {
     'chi-tiet-sp' => (new SanPhamController())->chitietSP(),
     'them-binh-luan' => (new SanPhamController())->themBinhLuan(),
     //Giỏ hàng
-    'them-gio-hang' =>(new SanPhamController())->addGioHang(),
-    'gio-hang' =>(new SanPhamController())->gioHang(),
-    'xoa-gio-hang' =>(new SanPhamController())->xoaGioHang(),
+    'them-gio-hang' => (new SanPhamController())->addGioHang(),
+    'gio-hang' => (new SanPhamController())->gioHang(),
+    'xoa-gio-hang' => (new SanPhamController())->xoaGioHang(),
 
     //Thanh toán 
-    'thanh-toan' =>(new SanPhamController())->thanhToan(),
-    'xu-li-thanh-toan' =>(new SanPhamController())->xuLiThanhToan(),
+    'thanh-toan' => (new SanPhamController())->thanhToan(),
+    'xu-li-thanh-toan' => (new SanPhamController())->xuLiThanhToan(),
 
     //Lich su mua hang
-    'lich-su-mua-hang' =>(new SanPhamController())->lichSuMuaHang(),
-    'chi-tiet-mua-hang' =>(new SanPhamController())->chiTietMuaHang(),
-    'huy-don-hang' =>(new SanPhamController())->huyDonHang(),
+    'lich-su-mua-hang' => (new SanPhamController())->lichSuMuaHang(),
+    'chi-tiet-mua-hang' => (new SanPhamController())->chiTietMuaHang(),
+    'huy-don-hang' => (new SanPhamController())->huyDonHang(),
 
-    'search' =>(new SanPhamController())->search(),
-
+    'search' => (new SanPhamController())->search(),
 };

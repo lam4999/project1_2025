@@ -60,4 +60,4 @@
       <i class="fa-solid fa-shopping-bag text-2xl"></i>
     </a>
   </div>
-</header> 
+</header>

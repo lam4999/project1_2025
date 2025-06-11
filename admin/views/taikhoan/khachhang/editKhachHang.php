@@ -25,7 +25,7 @@
               </div>
 
               <form action="<?= BASE_URL_ADMIN . '?act=sua-khach-hang' ?>" method="POST">
-              <input type="hidden" name="id" value="<?= $khachHang['id'] ?>">
+                <input type="hidden" name="id" value="<?= $khachHang['id'] ?>">
 
                 <div class="card-body">
                   <div class="form-group">
@@ -39,7 +39,7 @@
 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" name="email" value="<?= $khachHang['email'] ?>"  placeholder="Nhập email">
+                    <input type="email" class="form-control" name="email" value="<?= $khachHang['email'] ?>" placeholder="Nhập email">
                     <?php if (isset($error['email'])) { ?>
                       <p class="text-danger"><?= $error['email'] ?></p>
                     <?php } ?>
@@ -60,7 +60,7 @@
                       <p class="text-danger"><?= $error['dia_chi'] ?></p>
                     <?php } ?>
                   </div>
-                
+
 
 
 
