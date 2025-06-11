@@ -12,7 +12,7 @@
 </head>
 <body class="bg-pink-100 font-sans">
     <div class="container mx-auto p-6">
-        <h2 class="text-3xl font-bold text-pink-600 text-center mb-6">Lịch Sử Mua Hàng 🧸</h2>
+        <h2 class="text-3xl font-bold text-pink-600 text-center mb-6">Lịch Sử Mua Hàng </h2>
         
         <div class="flex justify-center mb-6">
             <input type="text" id="searchInput" placeholder="Tìm kiếm đơn hàng..." 

@@ -1,4 +1,3 @@
-
 <?php require_once 'layout/header.php' ?>
 <?php require_once 'layout/menu.php' ?>
 
@@ -58,13 +57,13 @@
   <!-- Service Section -->
   
   <!-- Product Categories -->
-  <section class="px-10 py-8">
+  <section class="px-8 py-6">
     <div class="grid grid-cols-3 gap-2">
       <?php foreach($listDanhMuc as $danhMuc) : ?>
       <div class="bg-pink-100 rounded-lg shadow-lg overflow-hidden">
-        <img src="./img/ChatGPT Image 04_32_20 1 thg 6, 2025.png" alt="" class="w-full">
+        <img src="./img/logo.png" alt="" class="w-max h-max">
         <a href="<?= BASE_URL.'?act=san-pham&id_danhmuc='.$danhMuc['id']?> ">
-        <p class="text-center font-bold text-pink-600 py-4"><?= $danhMuc['ten'] ?></p>
+        <p class="text-center font-bold text-pink-700 py-4"><?= $danhMuc['ten'] ?></p>
         </a>
       </div>
       <?php endforeach ;?>
@@ -81,7 +80,7 @@
       <div class="bg-white p-4 rounded-lg shadow-lg">
     <img src="<?= BASE_URL . $sanPham['hinhanh'] ?>" alt="" class="w-full rounded-lg hover-img">
     <p class="text-center font-bold text-pink-600 py-4"><?= $sanPham['ten'] ?></p>
-    <p class="text-pink-600 text-xl font-bold text-center">
+<p class="text-pink-600 text-xl font-bold text-center">
         <?= number_format($sanPham['gia_coso'], 0) ?>₫
     </p>
 </div>

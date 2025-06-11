@@ -8,7 +8,7 @@
     }
 
     public function formdangki(){
-        require_once './views/layout/dangnhap,dangki/formDangKiClient.php';
+        require_once './views/layout/dangnhapdangky/formDangKiClient.php';
         deleteSessionError();
     }
 
@@ -96,7 +96,7 @@
     }
 
     public function formdangnhap(){
-        require_once './views/layout/dangnhap,dangki/formDangNhapClient.php';
+        require_once './views/layout/dangnhapdangky/formDangNhapClient.php';
         deleteSessionError();
     }
 

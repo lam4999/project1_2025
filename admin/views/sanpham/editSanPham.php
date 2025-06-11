@@ -23,8 +23,8 @@
                                 <h3 class="card-title">Sửa sản phẩm</h3>
                             </div>
 
-                            <form action="<?= BASE_URL_ADMIN . '?act=sua-san-pham' ?>" method="POST" enctype="multipart/form-data">
-
+                            <form action="<?= BASE_URL_ADMIN . '?act=sua-san-pham' ?>" method="POST" enctype="multipart/form-data" >
+                                
                                 <input type="hidden" name="id" value="<?= $sanpham['id'] ?>">
                                 <div class="card-body">
                                     <div class="form-group">
@@ -42,7 +42,7 @@
 
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Hình ảnh</label>
-                                        <input type="file" class="form-control" name="hinhanh">
+                                        <input type="file" class="form-control" name="hinhanh" >
                                         <small>Hình ảnh hiện tại: <?= $sanpham['hinhanh'] ?></small>
                                     </div>
 
@@ -56,7 +56,7 @@
                                         <input type="datetime-local" class="form-control" name="ngay_capnhat" value="<?= date('Y-m-d\TH:i', strtotime($sanpham['ngay_capnhat'])) ?>">
                                     </div>
 
-
+                                  
 
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Danh muc</label>
