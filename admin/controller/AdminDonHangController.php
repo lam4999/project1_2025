@@ -20,20 +20,20 @@ class AdminDonHangController
 
     //var_dump($don_hang_id);die;
     $donHang = $this->modelDonHang->getDetailDonHang($don_hang_id);
-//    var_dump($donHang);die;
+    //    var_dump($donHang);die;
 
     $sanPhamDonHang = $this->modelDonHang->getListDonHang($don_hang_id);
     // var_dump($sanPhamDonHang);die;
     require_once './views/donhang/detailDonHang.php';
   }
 
-  
+
   public function formEditDonHang()
   {
     //Lấy thông tin danh mục cần sửa
     $id = $_GET['id_donhang'];
     $donHang = $this->modelDonHang->getDetailDonHang($id);
-    
+
     // $listTrangThaiDonHang = $this->modelDonHang->getAllTrangThaiDonHang()
 
     if ($donHang) {
@@ -46,7 +46,6 @@ class AdminDonHangController
 
   public function postEditDonHang()
   {
-    //Kiểm tra dữ liệu đc submit
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $id = $_POST['id'];
       $ten = $_POST['ten'];
@@ -56,14 +55,22 @@ class AdminDonHangController
       $vanchuyen_thanhpho = $_POST['vanchuyen_thanhpho'];
       $trangthai = $_POST['trangthai'];
       $error = [];
+
+      // Lấy trạng thái hiện tại của đơn hàng từ DB
+      $donHang = $this->modelDonHang->getDetailDonHang($id);
+      if ($donHang && $donHang['trangthai'] === 'đã giao') {
+        // Không cho phép cập nhật nếu đã giao
+        $_SESSION['error'] = 'Đơn hàng đã giao không thể chỉnh sửa!';
+        header("Location: " . BASE_URL_ADMIN . '?act=form-sua-don-hang&id_donhang=' . $id);
+        exit();
+      }
+
       if (empty($ten)) {
         $error['ten'] = 'Tên danh mục không được để trống';
       }
-
       if (empty($dien_thoai)) {
         $error['dien_thoai'] = 'SDT không được để trống';
       }
-
       if (empty($email)) {
         $error['email'] =  'Email không được để trống';
       }
@@ -74,7 +81,7 @@ class AdminDonHangController
         $error['vanchuyen_thanhpho'] = 'Vận chuyển không được để trống';
       }
       if (empty($trangthai)) {
-        $error['trangthai'] = 'Trạng thái đơn hàng';
+        $error['trangthai'] = 'Trạng thái đơn hàng không được để trống';
       }
 
       if (empty($error)) {
@@ -82,18 +89,11 @@ class AdminDonHangController
         header("Location: " . BASE_URL_ADMIN . '?act=don-hang');
         exit();
       } else {
+        // Có lỗi, chuyển lại form và truyền lỗi qua session nếu cần
+        $_SESSION['error_form'] = $error;
         header("Location: " . BASE_URL_ADMIN . '?act=form-sua-don-hang&id_donhang=' . $id);
+        exit();
       }
     }
   }
-
-  //   public function deleteSanPham(){
-  //     $id = $_GET['id_sanpham'];
-  //     $sanpham = $this->modelSanPham->getDetailSanPham($id);
-  //     if($sanpham) {
-  //       $this->modelSanPham->destroySanPham($id);
-  //     }
-  //     header("Location: " . BASE_URL_ADMIN . '?act=san-pham');
-  //     exit();
-  //   }
 }

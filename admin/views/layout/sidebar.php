@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link text-center" >
+    <a href="<?= BASE_URL_ADMIN. '' ?>" class="brand-link text-center" >
       <span class="brand-text font-weight-light text-xl">Admin</span>
     </a>
 
@@ -12,7 +12,7 @@
           <img src="./assets/dist/img/user5-128x128.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block text-lg">Fbear</a>
+          <a href="<?= BASE_URL_ADMIN. '' ?>" class="d-block text-lg">hehe</a>
         </div>
       </div>
 
@@ -25,7 +25,7 @@
                with font-awesome or any other icon font library -->
 
                <li class="nav-item">
-            <a href="<?= BASE_URL_ADMIN. '/' ?>" class="nav-link">
+            <a href="<?= BASE_URL_ADMIN. '' ?>" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
               Trang chủ

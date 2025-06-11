@@ -23,7 +23,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">Sửa thông tin đơn hàng: <?= $donHang['phien_token'] ?></h3>
                             </div>
-
+                            <?php $isLocked = ($donHang['trangthai'] === 'đã giao'); ?>
                             <form action="<?= BASE_URL_ADMIN . '?act=sua-don-hang' ?>" method="POST">
                                 <input type="text" name="id" value="<?= $donHang['id'] ?>" hidden>
                                 <div class="card-body">
@@ -65,18 +65,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="inputStatus">Trạng thái</label>
-                                        <select name="trangthai" class="form-control custom-select">
-                                            <!-- In ra trạng thái hiện tại của đơn hàng -->
+                                        <select name="trangthai" class="form-control custom-select" <?= $isLocked ? 'disabled' : '' ?>>
                                             <option value="<?= $donHang['trangthai'] ?>" selected><?= $donHang['trangthai'] ?></option>
-
                                             <?php
-                                            // Khai báo các trạng thái có sẵn
                                             $statusOptions = ['xử lý', 'vận chuyển', 'đã giao', 'đã hủy'];
-
-                                            // Loại bỏ trạng thái hiện tại nếu nó đã có trong danh sách
                                             $statusOptions = array_diff($statusOptions, [$donHang['trangthai']]);
-
-                                            // Hiển thị các lựa chọn còn lại
                                             foreach ($statusOptions as $status) {
                                                 echo "<option value='$status'>$status</option>";
                                             }
@@ -90,7 +83,7 @@
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary" <?= $isLocked ? 'disabled' : '' ?>>Submit</button>
                                 </div>
                             </form>
                         </div>

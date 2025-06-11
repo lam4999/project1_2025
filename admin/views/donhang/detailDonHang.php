@@ -40,7 +40,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <h4>
-                                    <i class="fas fa-globe"></i> Shop gấu bông Hauhoang-Vanminh
+                                    <i class="fas fa-globe"></i> Shop Quần áo TrendingShop
                                     <small class="float-right">Date: <?= $donHang['ngay_capnhat'] ?></small>
                                 </h4>
                             </div>
