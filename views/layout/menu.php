@@ -33,7 +33,7 @@
 
       <div class="flex items-center space-x-2">
         <span class="text-2xl font-bold">📞</span>
-        <span class="text-xl font-semibold tracking-wide">087.8888.907</span>
+        <span class="text-xl font-semibold tracking-wide">0352614404</span>
       </div>
     </div>
 

@@ -11,13 +11,13 @@ require_once './controller/AdminSanphamController.php';
 require_once './controller/AdminDonHangController.php';
 require_once './controller/AdminBaoCaoThongKeController.php';
 require_once './controller/AdminTaiKhoanController.php';
-
+require_once './controller/AdminBinhLuanController.php';
 // Require toàn bộ file Models
 require_once './models/AdminDanhMuc.php';
 require_once './models/AdminSanPham.php';
 require_once './models/AdminDonHang.php';
 require_once './models/AdminTaiKhoan.php';
-
+require_once './models/AdminBinhLuan.php';
 // Route
 $act = $_GET['act'] ?? '/';
 
@@ -47,6 +47,15 @@ match ($act) {
   'sua-don-hang' => (new AdminDonHangController())->postEditDonHang(),
   'chi-tiet-va-sua-don-hang' => (new AdminDonHangController())->detailAndEditDonHang(),
   'sua-don-hang' => (new AdminDonHangController())->postEditDonHang(),
+
+
+  //route Bình luận
+  'binh-luan' => (new AdminBinhLuanController())->danhSachBinhLuan(),
+  'form-them-binh-luan' => (new AdminBinhLuanController())->formAddBinhLuan(),
+  'them-binh-luan' => (new AdminBinhLuanController())->postAddBinhLuan(),
+  'form-sua-binh-luan' => (new AdminBinhLuanController())->formEditBinhLuan(),
+  'sua-binh-luan' => (new AdminBinhLuanController())->postEditBinhLuan(),
+  'xoa-binh-luan' => (new AdminBinhLuanController())->deleteBinhLuan(),
 
 
   //route quản lý tài khoản 

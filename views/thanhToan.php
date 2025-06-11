@@ -67,8 +67,6 @@
                 <label class="flex items-center text-gray-700">
                     <input type="radio" name="phuongthuc_thanhtoan" value="Thanh toán khi nhận hàng " checked class="mr-2">
                     Thanh toán khi nhận hàng
-                    <input type="radio" name="phuongthuc_thanhtoan" value="Online" class="mr-2 ml-4">
-                    Thanh toán online
                 </label>
             </div>
 

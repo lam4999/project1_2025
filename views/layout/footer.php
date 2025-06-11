@@ -31,7 +31,7 @@
       <div>
         <h4 class="font-bold mb-2 text-purple-800 text-xl">TRENDINGSHOP</h4>
         <p>Phương Canh, Hà Nội</p>
-        <p>087.8888.907 - 096.2222.345</p>
+        <p>035.2614.404</p>
       </div>
       <div>
         <h4 class="font-bold mb-2 text-purple-800 text-xl">CHUYỂN KHOẢN ONLINE</h4>
@@ -60,7 +60,7 @@
     <div class="mt-12 flex flex-col md:flex-row justify-between items-center border-t pt-8 border-purple-300">
       <p class="text-sm text-gray-600">© Since 2013 TrendingShop.vn</p>
       <div class="flex space-x-6 mt-6 md:mt-0">
-        <img src="./img/bocongthuong.png" alt="Bộ Công Thương" class="hover:opacity-80 transition h-20">
+        
       </div>
     </div>
   </div>
