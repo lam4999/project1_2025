@@ -6,90 +6,54 @@ class AdminDonHangController
   {
     $this->modelDonHang = new AdminDonHang();
   }
+
   public function danhSachDonHang()
   {
-
     $listDonHang = $this->modelDonHang->getAllDonHang();
-
     require_once './views/donhang/listDonHang.php';
   }
 
-  public function detailDonHang()
+  // Gộp chi tiết và sửa đơn hàng vào 1 action
+  public function detailAndEditDonHang()
   {
     $don_hang_id = $_GET['id_donhang'];
-
-    //var_dump($don_hang_id);die;
     $donHang = $this->modelDonHang->getDetailDonHang($don_hang_id);
-    //    var_dump($donHang);die;
-
     $sanPhamDonHang = $this->modelDonHang->getListDonHang($don_hang_id);
-    // var_dump($sanPhamDonHang);die;
-    require_once './views/donhang/detailDonHang.php';
+
+    // Lấy lỗi từ session nếu có
+    $error = isset($_SESSION['error_form']) ? $_SESSION['error_form'] : [];
+    unset($_SESSION['error_form']);
+
+    require_once './views/donhang/chinhsuaDonHang.php';
   }
 
-
-  public function formEditDonHang()
-  {
-    //Lấy thông tin danh mục cần sửa
-    $id = $_GET['id_donhang'];
-    $donHang = $this->modelDonHang->getDetailDonHang($id);
-
-    // $listTrangThaiDonHang = $this->modelDonHang->getAllTrangThaiDonHang()
-
-    if ($donHang) {
-      require_once './views/donhang/editDonHang.php';
-    } else {
-      header("Location: " . BASE_URL_ADMIN . '?act=don-hang');
-      exit();
-    }
-  }
-
+  // Xử lý cập nhật đơn hàng từ form trên trang chi tiết
   public function postEditDonHang()
   {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $id = $_POST['id'];
-      $ten = $_POST['ten'];
-      $dien_thoai = $_POST['dien_thoai'];
-      $email = $_POST['email'];
-      $dia_chi = $_POST['dia_chi'];
-      $vanchuyen_thanhpho = $_POST['vanchuyen_thanhpho'];
       $trangthai = $_POST['trangthai'];
       $error = [];
 
       $donHang = $this->modelDonHang->getDetailDonHang($id);
       if ($donHang && $donHang['trangthai'] === 'đã giao') {
         $_SESSION['error'] = 'Đơn hàng đã giao không thể chỉnh sửa!';
-        header("Location: " . BASE_URL_ADMIN . '?act=form-sua-don-hang&id_donhang=' . $id);
+        header("Location: " . BASE_URL_ADMIN . '?act=chi-tiet-va-sua-don-hang&id_donhang=' . $id);
         exit();
       }
 
-      if (empty($ten)) {
-        $error['ten'] = 'Tên danh mục không được để trống';
-      }
-      if (empty($dien_thoai)) {
-        $error['dien_thoai'] = 'SDT không được để trống';
-      }
-      if (empty($email)) {
-        $error['email'] =  'Email không được để trống';
-      }
-      if (empty($dia_chi)) {
-        $error['dia_chi'] = 'Địa chỉ không được để trống';
-      }
-      if (empty($vanchuyen_thanhpho)) {
-        $error['vanchuyen_thanhpho'] = 'Vận chuyển không được để trống';
-      }
       if (empty($trangthai)) {
         $error['trangthai'] = 'Trạng thái đơn hàng không được để trống';
       }
 
       if (empty($error)) {
-        $this->modelDonHang->updateDonHang($id, $ten, $dien_thoai, $email, $dia_chi, $vanchuyen_thanhpho, $trangthai);
+        // Chỉ cập nhật trạng thái
+        $this->modelDonHang->updateTrangThaiDonHang($id, $trangthai);
         header("Location: " . BASE_URL_ADMIN . '?act=don-hang');
         exit();
       } else {
-        // Có lỗi, chuyển lại form và truyền lỗi qua session nếu cần
         $_SESSION['error_form'] = $error;
-        header("Location: " . BASE_URL_ADMIN . '?act=form-sua-don-hang&id_donhang=' . $id);
+        header("Location: " . BASE_URL_ADMIN . '?act=chi-tiet-va-sua-don-hang&id_donhang=' . $id);
         exit();
       }
     }

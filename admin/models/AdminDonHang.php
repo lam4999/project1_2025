@@ -11,7 +11,7 @@ class AdminDonHang
     public function getAllDonHang()
     {
         try {
-            $sql = 'SELECT * FROM orders';
+            $sql = 'SELECT * FROM orders ORDER BY id DESC';
 
             $stmt = $this->conn->prepare($sql);
 
@@ -98,6 +98,20 @@ class AdminDonHang
             ]);
 
             return $stmt->fetchAll();
+        } catch (Exception $e) {
+            echo "Lỗi: " . $e->getMessage();
+        }
+    }
+    public function updateTrangThaiDonHang($id, $trangthai)
+    {
+        try {
+            $sql = "UPDATE orders SET trangthai = :trangthai WHERE id = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                ':id' => $id,
+                ':trangthai' => $trangthai,
+            ]);
+            return true;
         } catch (Exception $e) {
             echo "Lỗi: " . $e->getMessage();
         }

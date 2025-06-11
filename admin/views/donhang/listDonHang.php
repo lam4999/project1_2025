@@ -41,14 +41,15 @@
                                             <td><?= $key + 1 ?></td>
                                             <td><?= $donHang['id_KH'] ?></td>
                                             <td><?= $donHang['ten'] ?></td>
-                                            <td><?= $donHang['dien_thoai'] ?></td>
+                                            <td>0<?= $donHang['dien_thoai'] ?></td>
                                             <td><?= $donHang['dia_chi'] ?></td>
                                             <td><?= $donHang['tong_gia'] ?></td>
                                             <td><?= $donHang['trangthai'] ?></td>
 
                                             <td>
-                                                <a href="<?= BASE_URL_ADMIN . '?act=chi-tiet-don-hang&id_donhang=' . $donHang['id'] ?>"><button class="btn btn-primary">Chi tiết</button></a>
-                                                <a href="<?= BASE_URL_ADMIN . '?act=form-sua-don-hang&id_donhang=' . $donHang['id'] ?>"><button class="btn btn-warning">Sửa</button></a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=chi-tiet-va-sua-don-hang&id_donhang=' . $donHang['id'] ?>">
+                                                    <button class="btn btn-primary">Chi tiết / Sửa</button>
+                                                </a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

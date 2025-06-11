@@ -44,9 +44,9 @@ match ($act) {
   'xoa-san-pham' => (new AdminSanPhamController())->deleteSanPham(),
 
   'don-hang' => (new AdminDonHangController())->danhSachDonHang(),
-  'form-sua-don-hang' => (new AdminDonHangController())->formEditDonHang(),
   'sua-don-hang' => (new AdminDonHangController())->postEditDonHang(),
-  'chi-tiet-don-hang' => (new AdminDonHangController())->detailDonHang(),
+  'chi-tiet-va-sua-don-hang' => (new AdminDonHangController())->detailAndEditDonHang(),
+  'sua-don-hang' => (new AdminDonHangController())->postEditDonHang(),
 
 
   //route quản lý tài khoản 

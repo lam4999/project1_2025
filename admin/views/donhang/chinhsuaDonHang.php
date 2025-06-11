@@ -9,7 +9,6 @@
                 <div class="col-sm-6">
                     <h1>Quản lý đơn hàng: <?= $donHang['phien_token']  ?></h1>
                 </div>
-
             </div>
         </div>
     </section>
@@ -17,7 +16,8 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12">
+                <!-- Chi tiết đơn hàng -->
+                <div class="col-md-7">
                     <?php
                     if ($donHang['trangthai'] == 'xử lý') {
                         $colorAleter = 'primary';
@@ -32,11 +32,7 @@
                     <div class="alert alert-<?= $colorAleter ?>" role="alert">
                         Đơn hàng: <?= $donHang['trangthai'] ?>
                     </div>
-
-
-                    <!-- Main content -->
                     <div class="invoice p-3 mb-3">
-                        <!-- title row -->
                         <div class="row">
                             <div class="col-12">
                                 <h4>
@@ -44,22 +40,17 @@
                                     <small class="float-right">Date: <?= $donHang['ngay_capnhat'] ?></small>
                                 </h4>
                             </div>
-                            <!-- /.col -->
                         </div>
-                        <!-- info row -->
                         <div class="row invoice-info">
-                            <!-- /.col -->
                             <div class="col-sm-4 invoice-col">
                                 Thông tin người đặt
                                 <address>
                                     Tên :<strong><?= $donHang['ten'] ?></strong><br>
                                     Email: <?= $donHang['email'] ?><br>
-                                    Số điện thoại: <?= $donHang['dien_thoai']  ?><br>
+                                    Số điện thoại: 0<?= $donHang['dien_thoai']  ?><br>
                                     Địa chỉ: <?= $donHang['dia_chi']  ?><br>
-
                                 </address>
                             </div>
-                            <!-- /.col -->
                             <div class="col-sm-4 invoice-col">
                                 Thông tin
                                 <address>
@@ -67,14 +58,9 @@
                                     Tổng tiền: <?= $donHang['tong_gia'] ?><br>
                                     Ghi chú: <?= $donHang['vanchuyen_thanhpho'] ?><br>
                                     Thanh toán: Tiền mặt<br>
-
                                 </address>
                             </div>
-                            <!-- /.col -->
                         </div>
-                        <!-- /.row -->
-
-                        <!-- Table row -->
                         <div class="row">
                             <div class="col-12 table-responsive">
                                 <table class="table table-striped">
@@ -90,7 +76,6 @@
                                     <tbody>
                                         <?php $tong_tien = 0; ?>
                                         <?php foreach ($sanPhamDonHang as $key => $sanPham): ?>
-
                                             <tr>
                                                 <td><?= $key + 1 ?></td>
                                                 <td><?= $sanPham['ten'] ?></td>
@@ -103,17 +88,10 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <!-- /.col -->
                         </div>
                         <small class="float-right">Ngày đặt: <?= $donHang['ngay_capnhat'] ?></small>
-
-                        <!-- /.row -->
-
                         <div class="row">
-
-                            <!-- /.col -->
                             <div class="col-6">
-
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tr>
@@ -131,52 +109,41 @@
                                     </table>
                                 </div>
                             </div>
-                            <!-- /.col -->
                         </div>
-                        <!-- /.row -->
-
-                        <!-- this row will not appear when printing -->
-                        <!-- <div class="row no-print">
-                <div class="col-12">
-                  <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-                  <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
-                    Payment
-                  </button>
-                  <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-                    <i class="fas fa-download"></i> Generate PDF
-                  </button>
-                </div>
-              </div> -->
                     </div>
-                    <!-- /.invoice -->
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+                </div>
+                <!-- Form sửa đơn hàng -->
+                <div class="col-md-5">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Sửa thông tin đơn hàng</h3>
+                        </div>
+                        <?php $isLocked = ($donHang['trangthai'] === 'đã giao'); ?>
+                        <form action="<?= BASE_URL_ADMIN . '?act=sua-don-hang' ?>" method="POST">
+                            <input type="hidden" name="id" value="<?= $donHang['id'] ?>">
+                            <div class="form-group">
+                                <label>Trạng thái</label>
+                                <select name="trangthai" class="form-control custom-select" <?= $isLocked ? 'disabled' : '' ?>>
+                                    <option value="<?= $donHang['trangthai'] ?>" selected><?= $donHang['trangthai'] ?></option>
+                                    <?php
+                                    $statusOptions = ['xử lý', 'vận chuyển', 'đã giao', 'đã hủy'];
+                                    $statusOptions = array_diff($statusOptions, [$donHang['trangthai']]);
+                                    foreach ($statusOptions as $status) {
+                                        echo "<option value='$status'>$status</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary" <?= $isLocked ? 'disabled' : '' ?>>Cập nhật</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- End form sửa -->
+            </div>
+        </div>
     </section>
 </div>
 
-<?php include './views/layout/footer.php' ?>
-
-<script>
-    $(function() {
-        $("#example1").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
-        });
-    });
-</script>
-
-</body>
-
-</html>
+<?php include './views/layout/footer.php'; ?>

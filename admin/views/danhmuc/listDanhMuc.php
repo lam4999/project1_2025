@@ -43,8 +43,8 @@
                                              <td><?= $danhMuc['mieuta'] ?></td>
                                              <td><?= $danhMuc['ngay_capnhat'] ?></td>
                                              <td>
-                                                 <a href="<?= BASE_URL_ADMIN . '?act=form-sua-danh-muc&id_danhmuc=' . $danhMuc['id'] ?>"><button class="btn btn-warning">Sua</button> </a>
-                                                 <a href="<?= BASE_URL_ADMIN . '?act=xoa-danh-muc&id_danhmuc=' . $danhMuc['id'] ?>" onclick="return confirm('Ban co muon xoa khong?')"><button class="btn btn-danger">Xoa</button></a>
+                                                 <a href="<?= BASE_URL_ADMIN . '?act=form-sua-danh-muc&id_danhmuc=' . $danhMuc['id'] ?>"><button class="btn btn-warning">Sửa</button> </a>
+                                                 <a href="<?= BASE_URL_ADMIN . '?act=xoa-danh-muc&id_danhmuc=' . $danhMuc['id'] ?>" onclick="return confirm('Ban co muon xoa khong?')"><button class="btn btn-danger">Xóa</button></a>
                                              </td>
                                          </tr>
                                      <?php endforeach ?>
