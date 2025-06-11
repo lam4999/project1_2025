@@ -29,7 +29,7 @@
                         <?php foreach ($chiTietDonHang as $item): ?>
                         <tr class="text-center border-b">
                             <td class="p-2">
-                                <img src="<?= $item['hinhanh'] ?>" alt="Gấu bông" class="w-16 h-16 object-cover mx-auto">
+                                <img src="<?= $item['hinhanh'] ?>" alt="" class="w-16 h-16 object-cover mx-auto">
                             </td>
                             <td class="p-2"> <?= $item['ten'] ?> </td>
                             <td class="p-2 text-red-500 font-bold"> <?= number_format($item['gia'], 0, ',', '.') . ' đ' ?> </td>

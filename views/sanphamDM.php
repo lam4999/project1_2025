@@ -15,7 +15,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <?php foreach ($listSanPham as $sanPham): ?>
                 <div class="bg-white p-4 rounded-lg shadow-lg">
-                    <img src="<?= BASE_URL . $sanPham['hinhanh'] ?>" alt="Gấu Bông" class="w-full rounded-lg hover-img">
+                    <img src="<?= BASE_URL . $sanPham['hinhanh'] ?>" alt="" class="w-full rounded-lg hover-img">
                     <a href="<?= BASE_URL . '?act=chi-tiet-sp&id_sanpham=' . $sanPham['id'] ?>">
                         <p class="text-center font-bold text-pink-600 py-4"><?= $sanPham['ten'] ?></p>
                     </a>

@@ -19,7 +19,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <?php foreach ($dataSearch as $SanPham): ?>
                     <div class="bg-white rounded-lg shadow-lg p-4">
-                        <img src="<?= $SanPham['hinhanh'] ?? '' ?>" alt="Gấu Bông" class="w-full h-60 object-cover rounded-md">
+                        <img src="<?= $SanPham['hinhanh'] ?? '' ?>" alt="" class="w-full h-60 object-cover rounded-md">
                         <div class="text-center py-4">
                             <p class="text-lg font-semibold text-gray-800"> <?= $SanPham['ten'] ?? '' ?> </p>
                             <p class="text-pink-600 text-xl font-bold mt-2"> <?= number_format($SanPham['gia_coso'] ?? 0, 0, ',', '.') ?>đ </p>
