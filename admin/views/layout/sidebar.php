@@ -12,7 +12,7 @@
           <img src="./assets/dist/img/user5-128x128.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block text-lg">Admin</a>
+          <a href="#" class="d-block text-lg">Fbear</a>
         </div>
       </div>
 
@@ -25,12 +25,12 @@
                with font-awesome or any other icon font library -->
 
                <li class="nav-item">
-            <!-- <a href="<?= BASE_URL_ADMIN. '' ?>" class="nav-link">
+            <a href="<?= BASE_URL_ADMIN. '/' ?>" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
               Trang chủ
               </p>
-            </a> -->
+            </a>
           </li>   
 
           <li class="nav-item">
@@ -52,12 +52,12 @@
           </li>   
 
           <li class="nav-item">
-            <!-- <a href="<?= BASE_URL_ADMIN. '?act=don-hang' ?>" class="nav-link">
+            <a href="<?= BASE_URL_ADMIN. '?act=don-hang' ?>" class="nav-link">
             <i class="fas fa-file-invoice-dollar"></i>
             <p>
               Đơn hàng
               </p>
-            </a> -->
+            </a>
           </li>   
 
           <li class="nav-item">

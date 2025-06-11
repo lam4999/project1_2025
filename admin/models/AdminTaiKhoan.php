@@ -1,94 +1,149 @@
 <?php
-session_start();
 
-// Kết nối CSDL
-function connectDB() {
-    $host = 'localhost';
-    $dbname = 'ten_csdl'; // ← Thay bằng tên CSDL của bạn
-    $username = 'root';
-    $password = ''; // ← Thay bằng mật khẩu nếu có
-
-    try {
-        $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $conn;
-    } catch (PDOException $e) {
-        die("Kết nối thất bại: " . $e->getMessage());
-    }
-}
-
-// Class xử lý tài khoản
 class AdminTaiKhoan {
     public $conn;
 
-    public function __construct() {
-        $this->conn = connectDB();
+    public function __construct()
+    { 
+       $this->conn = connectDB();
+    }                                                                                                                                                                                                              
+
+    public function getAllTaiKhoan($vai_tro){
+      try{
+       $sql = 'SELECT * FROM user WHERE vai_tro = :vai_tro';
+          $stmt = $this->conn->prepare($sql);
+
+          $stmt->execute(
+            [
+               ':vai_tro' => $vai_tro
+            ]
+          );
+          
+          return $stmt->fetchAll();
+
+      }catch(Exception $e){
+       echo "Loi" . $e->getMessage();
+      }
     }
 
-    public function checkLogin($email, $mat_khau) {
+    public function insertTaiKhoan($ten, $ho,$dien_thoai,$dia_chi,$thanhpho,$ngay_capnhat, $email, $mat_khau, $vai_tro){
         try {
-            $sql = "SELECT * FROM user WHERE email = :email LIMIT 1";
+            $sql = 'INSERT INTO user (ten, ho,dien_thoai,dia_chi,thanhpho,ngay_capnhat, email, mat_khau, vai_tro) VALUES (:ten, :ho,:dien_thoai,:dia_chi,:thanhpho,:ngay_capnhat, :email, :mat_khau, :vai_tro)';
+
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([':email' => $email]);
-            $user = $stmt->fetch();
+            $stmt->execute([
+                ':ten' => $ten,
+                ':ho' => $ho,
+                ':dien_thoai' => $dien_thoai,
+                ':dia_chi' => $dia_chi,
+                ':ngay_capnhat' => $ngay_capnhat,
+                ':email' => $email,
+                ':thanhpho' => $thanhpho,
+                ':mat_khau' => $mat_khau,
+                ':vai_tro' => $vai_tro
+            ]);
+            
+            echo "Thêm thành công";
+            return true;
+        } catch (PDOException $e) {
+            echo "Lỗi: " . $e->getMessage(); 
+            exit();
+        }
+        
+      }
 
-            if ($user && $user['mat_khau'] === $mat_khau) {
-                return $user; // Trả về dữ liệu người dùng
-            } else {
-                return "Thông tin đăng nhập không chính xác";
-            }
+      public function getDetailTaiKhoan($id){
+        try{
+            $sql = 'SELECT * FROM user WHERE id = :id';
+
+            $stmt = $this->conn->prepare($sql);
+
+            $stmt->execute([
+              ':id' => $id,
+            ]);
+            
+            return $stmt->fetch();
+
+        }catch(Exception $e){
+         echo "Loi" . $e->getMessage();
+        }
+      }
+
+      public function updateTaiKhoan($id,$ten,$email,$dien_thoai){
+        try {
+          $sql = "UPDATE user
+          SET ten = :ten, email = :email ,dien_thoai = :dien_thoai
+          WHERE id = :id";
+    
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                ':id' => $id,
+                ':ten' => $ten,
+                ':email' => $email,
+                ':dien_thoai' => $dien_thoai
+            ]);
+            return true;
         } catch (Exception $e) {
-            return "Lỗi: " . $e->getMessage();
+            echo "Lỗi: " . $e->getMessage();
         }
+    }
+
+    public function resetPassword($id,$mat_khau){
+      try {
+        $sql = "UPDATE user
+        SET mat_khau = :mat_khau
+        WHERE id = :id";
+  
+          $stmt = $this->conn->prepare($sql);
+          $stmt->execute([
+              ':id' => $id,
+              ':mat_khau' => $mat_khau
+          ]);
+          return true;
+      } catch (Exception $e) {
+          echo "Lỗi: " . $e->getMessage();
+      }
+  }
+
+  public function updateKhachHang($id,$ten,$email,$dien_thoai,$dia_chi){
+    try {
+      $sql = "UPDATE user
+      SET ten = :ten, email = :email ,dien_thoai = :dien_thoai ,dia_chi = :dia_chi
+      WHERE id = :id";
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            ':id' => $id,
+            ':ten' => $ten,
+            ':email' => $email,
+            ':dien_thoai' => $dien_thoai,
+            ':dia_chi' => $dia_chi
+
+        ]);
+        return true;
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
     }
 }
 
-// Xử lý đăng nhập
-$thongBao = "";
+public function checkLogin($email, $mat_khau) {
+    try {
+        $sql = "SELECT * FROM user WHERE email = :email AND vai_tro = 'admin' LIMIT 1";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([':email' => $email]);
+        $user = $stmt->fetch();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'] ?? '';
-    $mat_khau = $_POST['mat_khau'] ?? '';
-
-    $adminTK = new AdminTaiKhoan();
-    $user = $adminTK->checkLogin($email, $mat_khau);
-
-    if (is_array($user)) {
-        $_SESSION['user'] = $user;
-
-        // Chuyển hướng dựa trên vai trò
-        if ($user['vai_tro'] === 'admin') {
-            header("Location: /admin/dashboard.php");
-        } else {
-            header("Location: /user/home.php");
+        if ($user && $mat_khau === $user['mat_khau']) {
+            // Nếu dùng password_hash khi lưu mật khẩu, thay dòng trên bằng:
+            // if ($user && password_verify($mat_khau, $user['mat_khau'])) {
+            return ['email' => $user['email'], 'vai_tro' => $user['vai_tro']];
         }
-        exit();
-    } else {
-        $thongBao = $user;
+        return false;
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
+        return false;
     }
 }
-?>
 
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <title>Đăng nhập</title>
-</head>
-<body>
-    <h2>Đăng nhập</h2>
-    <?php if (!empty($thongBao)) : ?>
-        <p style="color: red;"><?php echo $thongBao; ?></p>
-    <?php endif; ?>
 
-    <form method="POST">
-        <label for="email">Email:</label><br>
-        <input type="email" name="email" required><br><br>
-
-        <label for="mat_khau">Mật khẩu:</label><br>
-        <input type="password" name="mat_khau" required><br><br>
-
-        <button type="submit">Đăng nhập</button>
-    </form>
-</body>
-</html>
+}

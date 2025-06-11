@@ -18,7 +18,7 @@
         <p class="mt-4 text-gray-700 text-lg text-center">TrendingShop là thương hiệu thời trang hiện đại, cung cấp quần áo phong cách, chất lượng cao phù hợp với giới trẻ và mọi dịp trong cuộc sống.</p>
         
         <div class="flex justify-center mt-6">
-            <img src="./img/fashion1.jpg" alt="Thời trang" class="w-full rounded-lg shadow">
+            <img src="./img/logo.png" alt="Thời trang" class="w-full rounded-lg shadow">
         </div>
         
         <section class="mt-6">
@@ -35,8 +35,8 @@
             </ul>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                <img src="./img/fashion2.jpg" alt="Sản phẩm 1" class="w-full rounded-lg shadow">
-                <img src="./img/fashion3.jpg" alt="Sản phẩm 2" class="w-full rounded-lg shadow">
+                <img src="./uploads/1749619902sp2.jpeg" alt="Sản phẩm 1" class="w-full rounded-lg shadow">
+                <img src="./uploads/1749619902sp2.jpeg" alt="Sản phẩm 2" class="w-full rounded-lg shadow">
             </div>
         </section>
         
