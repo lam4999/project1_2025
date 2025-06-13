@@ -11,7 +11,6 @@
 
     <nav class="hidden md:flex space-x-8 mt-4 md:mt-0 text-lg">
       <a href="<?= BASE_URL ?>" class="text-white hover:text-green-200 transition">Trang Chủ</a>
-      <a href="<?= BASE_URL . '?act=form-khuyen-mai' ?>" class="text-white hover:text-green-200 transition">Khuyến mại</a>
       <a href="<?= BASE_URL . '?act=gioi-thieu' ?>" class="text-white hover:text-green-200 transition">Giới thiệu</a>
       <a href="<?= BASE_URL . '?act=lien-he' ?>" class="text-white hover:text-green-200 transition">Liên hệ</a>
     </nav>
