@@ -66,7 +66,7 @@
                         </tr>
                         <tr class="border-b">
                             <td class="p-2 font-semibold">Số điện thoại:</td>
-                            <td class="p-2"> <?= $donHang['dien_thoai'] ?> </td>
+                            <td class="p-2"> 0<?= $donHang['dien_thoai'] ?> </td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2 font-semibold">Địa chỉ:</td>
@@ -79,6 +79,10 @@
                         <tr class="border-b">
                             <td class="p-2 font-semibold">Ghi chú:</td>
                             <td class="p-2"> <?= $donHang['vanchuyen_thanhpho'] ?> </td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-2 font-semibold">Phí vận chuyển:</td>
+                            <td class="p-2 font-semibold text-red-500">35.000</td>
                         </tr>
                         <tr>
                             <td class="p-2 font-semibold text-lg">Tổng tiền:</td>

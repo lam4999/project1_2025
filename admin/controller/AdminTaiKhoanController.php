@@ -95,7 +95,7 @@ class AdminTaiKhoanController
     }
   }
 
-  public function resetPassword()
+  public function resetPassword() 
   {
     $tai_khoan_id = $_GET['id_quantri'];
     $mat_khau = password_hash('123@123ac', PASSWORD_BCRYPT);

@@ -100,11 +100,11 @@
                                         </tr>
                                         <tr>
                                             <th>Vận chuyển</th>
-                                            <td>50000</td>
+                                            <td>35000</td>
                                         </tr>
                                         <tr>
                                             <th>Total:</th>
-                                            <td><?= $tong_tien + 50000 ?></td>
+                                            <td><?= $tong_tien + 35000 ?></td>
                                         </tr>
                                     </table>
                                 </div>
